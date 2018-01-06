@@ -2,7 +2,18 @@ var KHOI = KHOI || {};
 
 KHOI.Fish = function(idNumber, radius, resolution) {
   this.idNumber = idNumber;
-  this.path = new Path();
+  this.path = new CompoundPath();
+  this.headPathR = new Path();
+  this.headPathL = new Path();
+  this.headPathLinkR = new Path();
+  this.headPathLinkL = new Path();
+  this.midPath1R = new Path();
+  this.midPath1L = new Path();
+
+
+  this.midPath2 = new Path();
+  this.midPath3 = new Path();
+  this.tailPath = new Path();
   this.pathRadius = radius;
   this.pathSides = resolution;
   this.pathPoints = [this.pathSides];
@@ -42,7 +53,7 @@ KHOI.Fish = function(idNumber, radius, resolution) {
     fillColor: this.colors[idNumber].f
   };
 
-  this.location = new Point(200, 200);
+  this.location = new Point(70, 70);
   this.velocity = new Point(0, 0);
   this.acceleration = new Point(0, 0);
 
@@ -66,7 +77,19 @@ KHOI.Fish.prototype.init = function() {
     point.x += 20;
     point.y += 100;
 
-    this.path.add(point);
+    if(i <= 10){
+      this.headPathR.add(point);
+    }
+    else if(i == 11 || i == 12){
+      this.midPath1R.add(point);
+    }
+    else if(i == 13){
+      this.midPath3.add(point);
+    }
+    else if(i == 14 || i == 15){
+      this.tailPath.add(point);
+    }
+
     this.pathPoints[i] = point.clone();
     this.pathPointsNormals[i] = point.normalize().clone();
   }
@@ -78,36 +101,98 @@ KHOI.Fish.prototype.init = function() {
     point.x += 20;
     point.y += 100;
 
+    if(i <= 10){
+      this.headPathL.add(point);
+    }
+    else if(i == 11 || i == 12){
+      this.midPath1L.add(point);
+    }
+    else if(i == 13){
+      this.midPath3.add(point);
+    }
+    else if(i == 14 || i == 15){
+      this.tailPath.add(point);
+    }
 
-    this.path.add(point);
     this.pathPoints[this.fishPoints.length - 2 + (this.fishPoints.length - i)] = point.clone();
     this.pathPointsNormals[this.fishPoints.length - 2 + (this.fishPoints.length - i)] = point.normalize().clone();
   }
   console.log(this.pathPoints);
   console.log(this.path.segments);
-  for(var i = 0; i < this.path.segments.length; i++){
-    if(i <= 10 || i >= 20){
-      console.log(i);
-      this.headGroup.push(this.path.segments[i].point);
-    }
-    else if(i == 11 || i == 19) {
-      this.midTailGroup.push(this.path.segments[i].point);
-    }
-    else if(i == 12 || i == 18) {
-      this.midTail2Group.push(this.path.segments[i].point);
-    }
-    else if(i == 13 || i == 17){
-      this.midTail3Group.push(this.path.segments[i].point);
-    }
-    else if(i == 14 || i == 15 || i == 16){
-      this.bottomTailGroup.push(this.path.segments[i].point);
-    }
-  }
+  // for(var i = 0; i < this.path.segments.length; i++){
+  //   if(i <= 10 || i >= 20){
+  //     console.log(i);
+  //     this.headGroup.push(this.path.segments[i].point);
+  //   }
+  //   else if(i == 11 || i == 19) {
+  //     this.midTailGroup.push(this.path.segments[i].point);
+  //   }
+  //   else if(i == 12 || i == 18) {
+  //     this.midTail2Group.push(this.path.segments[i].point);
+  //   }
+  //   else if(i == 13 || i == 17){
+  //     this.midTail3Group.push(this.path.segments[i].point);
+  //   }
+  //   else {
+  //     this.bottomTailGroup.push(this.path.segments[i].point);
+  //   }
+  // }
+  // var theta = (Math.PI * 2) / this.pathSides;
+  // for(var i = 0; i < this.pathSides; i++) {
+  //   var angle = theta * i;
+  //   var x = Math.cos(angle) * this.pathRadius * 0.3;
+  //   var y = Math.sin(angle) * this.pathRadius;
+  //
+  //   // goes from bottom center and rotates clockwise
+  //   // orientation is straight out of the right side (270 deg)
+  //   if( (angle > 0 && angle < Math.PI * 1.3) || (angle > Math.PI * 1.7 && angle < Math.PI * 2) ) {
+  //     y += Math.sin(angle) * (this.pathRadius);
+  //     if( angle > Math.PI * 0.3 && angle <= Math.PI * 0.7 ) {
+  //       x = Math.cos(angle) * this.pathRadius * 1.2;
+  //       y -= Math.sin(angle) * (this.pathRadius) * 0.2;
+  //     }
+  //   }
+  //   else if(angle >= Math.PI * 1.3 && angle <= Math.PI * 1.7){
+  //
+  //     //y += Math.sin(angle) * (this.pathRadius) * 0.3;
+  //     x -= Math.cos(angle) * this.pathRadius * 0.02;
+  //     y -= (this.pathRadius * 0.8);
+  //     if(angle >= Math.PI * 1.45 && angle <= Math.PI * 1.55) {
+  //       console.log("nose");
+  //       y += (this.pathRadius * 0.015);
+  //       x = Math.cos(angle) * this.pathRadius * 0.4;
+  //     }
+  //     //y *= 1.2;
+  //   }
+  //
+  //   var point = new Point(x, y);
+  //   this.path.add(point);
+  //   this.pathPoints[i] = point.clone();
+  //   this.pathPointsNormals[i] = point.normalize().clone();
+  // }
 
-  this.path.closed = true;
-  this.path.smooth();
+
+
+
+
+  this.path.addChild(this.headPathR);
+  this.path.addChild(this.headPathL);
+
+  this.path.addChild(this.midPath1R);
+  this.path.addChild(this.midPath1L);
+
+  // this.path.addChild(this.midPath2);
+  // this.path.addChild(this.midPath3);
+  // this.path.addChild(this.tailPath);
+
+  // this.path.closed = true;
+  //this.path.smooth();
   this.path.style = this.pathStyle;
+
   this.group.addChild(this.path);
+
+
+
   this.path.selected = true;
 
   var anchor1 = this.fishPoints[9].clone();
@@ -169,15 +254,10 @@ KHOI.Fish.prototype.init = function() {
   this.tails[1].init();
   this.tails[0].path.strokeColor = this.path.strokeColor;
   this.tails[0].path.strokeWidth = this.path.strokeWidth;
-  this.tails[0].path.selected = true;
   this.tails[1].path.strokeColor = this.path.strokeColor;
   this.tails[1].path.strokeWidth = this.path.strokeWidth;
-  this.tails[1].path.selected = true;
-
-
   this.group.addChild(this.tails[0].path);
   this.group.addChild(this.tails[1].path);
-
   // Create tentacles
 	// this.tentacles = [this.numTentacles];
 	// for (var t = 0; t < this.numTentacles; t++) {
@@ -208,61 +288,18 @@ KHOI.Fish.prototype.update = function(event){
 
   this.group.rotate(this.orientation - this.lastOrientation);
 
-  var sineSeed = (event.count * 0.2);
-
-  this.midTailGroup[0].y += Math.sin(sineSeed) * 0.1;
-  this.midTailGroup[1].y += Math.sin(sineSeed) * 0.1;
-  // this.midTailGroup[0].x -= Math.sin(sineSeed) * 0.5;
-  // this.midTailGroup[1].x += Math.sin(sineSeed) * 0.5;
-
-  this.midTail2Group[0].y += Math.sin(sineSeed) * 0.4;
-  this.midTail2Group[1].y += Math.sin(sineSeed) * 0.4;
-  // this.midTail2Group[0].x -= Math.sin(sineSeed) * 1;
-  // this.midTail2Group[1].x += Math.sin(sineSeed) * 1;
-
-  this.midTail3Group[0].y += Math.sin(sineSeed) * 0.8;
-  this.midTail3Group[1].y += Math.sin(sineSeed) * 0.8;
-  // this.midTail3Group[0].x -= Math.sin(sineSeed) * 1.5;
-  // this.midTail3Group[1].x += Math.sin(sineSeed) * 1.5;
-
-  for(var i = 0; i < this.bottomTailGroup.length; i++){
-    if(i != 1){
-      this.bottomTailGroup[i].y += Math.sin(sineSeed) * 1.2;
-    }
-    else {
-      this.bottomTailGroup[i].y += Math.sin(sineSeed) * 2;
-    }
-
-  }
-  var tailsegs = this.tails[0].path.segments.length;
-  for(var i = 0; i < tailsegs; i++){
-    if(i > 1 && i < tailsegs - 1){
-      //this.tails[0].path.segments[i].point.y += Math.sin(sineSeed) * 0.5;
-      //this.tails[1].path.segments[i].point.y += Math.sin(sineSeed) * 0.5;
-      this.tails[0].path.segments[i].point.x += Math.sin(sineSeed) * (i * i) / 16;
-      this.tails[1].path.segments[i].point.x -= Math.sin(sineSeed) * (i * i) / 25;
-    }
-    if(i != 1){
-      this.tails[0].path.segments[i].point.y += Math.sin(sineSeed) * 2;
-      this.tails[1].path.segments[i].point.y += Math.sin(sineSeed) * 2;
-    }
-    else {
-      this.tails[0].path.segments[i].point.y += Math.sin(sineSeed) * 1.6;
-      this.tails[1].path.segments[i].point.y += Math.sin(sineSeed) * 1.6;
-    }
-
-  }
-  // for(var i = 0; i < this.fins[0].path.segments.length; i++){
-  //   this.fins[0].path.segments[i].point.y += Math.sin(sineSeed) * 4;
-  //   this.fins[1].path.segments[i].point.y += Math.sin(sineSeed) * 4;
-  // }
-
-  this.tails[0].anchor.point = this.path.segments[14].point;
-  this.tails[1].anchor.point = this.path.segments[16].point;
-
-  this.tails[0].anchorBot.point = this.path.segments[15].point;
-  this.tails[1].anchorBot.point = this.path.segments[15].point;
-
+  // this.midTailGroup[0].y += 1;
+  // this.midTailGroup[1].y += 1;
+  // this.midTail2Group[0].y += 2;
+  // this.midTail2Group[1].y += 2;
+  // this.midTail3Group[0].y += 3;
+  // this.midTail3Group[1].y += 3;
+  // this.bottomTailGroup[0].y += 4;
+  // this.bottomTailGroup[1].y += 4;
+  // this.bottomTailGroup[2].y += 4;
+  //
+  // this.tails[0].anchor.point = this.path.segments[14].point;
+  // this.tails[0].anchorBot.point = this.path.segments[15].point;
 
 
   // expand contract
@@ -319,7 +356,7 @@ KHOI.Fish.prototype.wander = function() {
 	var wanderD	= 100;
 	var change = 0.05;
 
-	this.wanderTheta +=  Math.random() * (change * 2) - change;
+	this.wanderTheta += Math.random() * (change * 2) - change;
 
 	var circleLocation = this.velocity.clone();
 	circleLocation = circleLocation.normalize();

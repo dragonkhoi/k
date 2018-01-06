@@ -2,7 +2,7 @@ var KHOI = KHOI || {};
 
 KHOI.Main = (function() {
   paper.install(window);
-  paper.setup("canvas");
+  paper.setup("myCanvas");
 
   var timer = new Date();
   var fish1;
