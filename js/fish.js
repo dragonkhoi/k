@@ -175,8 +175,8 @@ KHOI.Fish.prototype.init = function() {
   this.tails[1].path.selected = true;
 
 
-  this.group.addChild(this.tails[0].path);
-  this.group.addChild(this.tails[1].path);
+  //this.group.addChild(this.tails[0].path);
+  //this.group.addChild(this.tails[1].path);
 
   // Create tentacles
 	// this.tentacles = [this.numTentacles];
@@ -209,59 +209,49 @@ KHOI.Fish.prototype.update = function(event){
   this.group.rotate(this.orientation - this.lastOrientation);
 
   var sineSeed = (event.count * 0.2);
+  var sinVal = Math.sin(sineSeed);
+  if(sineSeed > Math.PI){
+    sinVal *= 2; //Math.random() + 1;
+  }
 
-  this.midTailGroup[0].y += Math.sin(sineSeed) * 0.1;
-  this.midTailGroup[1].y += Math.sin(sineSeed) * 0.1;
+  this.midTailGroup[0].y += sinVal * 0.1;
+  this.midTailGroup[1].y += sinVal * 0.1;
   // this.midTailGroup[0].x -= Math.sin(sineSeed) * 0.5;
   // this.midTailGroup[1].x += Math.sin(sineSeed) * 0.5;
 
-  this.midTail2Group[0].y += Math.sin(sineSeed) * 0.4;
-  this.midTail2Group[1].y += Math.sin(sineSeed) * 0.4;
+  this.midTail2Group[0].y += sinVal * 0.4;
+  this.midTail2Group[1].y += sinVal * 0.4;
   // this.midTail2Group[0].x -= Math.sin(sineSeed) * 1;
   // this.midTail2Group[1].x += Math.sin(sineSeed) * 1;
 
-  this.midTail3Group[0].y += Math.sin(sineSeed) * 0.8;
-  this.midTail3Group[1].y += Math.sin(sineSeed) * 0.8;
+  this.midTail3Group[0].y += sinVal * 0.8;
+  this.midTail3Group[1].y += sinVal * 0.8;
   // this.midTail3Group[0].x -= Math.sin(sineSeed) * 1.5;
   // this.midTail3Group[1].x += Math.sin(sineSeed) * 1.5;
 
   for(var i = 0; i < this.bottomTailGroup.length; i++){
     if(i != 1){
-      this.bottomTailGroup[i].y += Math.sin(sineSeed) * 1.2;
+      this.bottomTailGroup[i].y += sinVal * 1.2;
     }
     else {
-      this.bottomTailGroup[i].y += Math.sin(sineSeed) * 2;
+      this.bottomTailGroup[i].y += sinVal * 2;
     }
 
   }
-  var tailsegs = this.tails[0].path.segments.length;
-  for(var i = 0; i < tailsegs; i++){
-    if(i > 1 && i < tailsegs - 1){
-      //this.tails[0].path.segments[i].point.y += Math.sin(sineSeed) * 0.5;
-      //this.tails[1].path.segments[i].point.y += Math.sin(sineSeed) * 0.5;
-      this.tails[0].path.segments[i].point.x += Math.sin(sineSeed) * (i * i) / 16;
-      this.tails[1].path.segments[i].point.x -= Math.sin(sineSeed) * (i * i) / 25;
-    }
-    if(i != 1){
-      this.tails[0].path.segments[i].point.y += Math.sin(sineSeed) * 2;
-      this.tails[1].path.segments[i].point.y += Math.sin(sineSeed) * 2;
-    }
-    else {
-      this.tails[0].path.segments[i].point.y += Math.sin(sineSeed) * 1.6;
-      this.tails[1].path.segments[i].point.y += Math.sin(sineSeed) * 1.6;
-    }
+  this.tails[0].anchor.point = this.path.segments[16].point;
+  this.tails[1].anchor.point = this.path.segments[14].point;
 
-  }
+  this.tails[0].anchorBot.point = this.path.segments[15].point;
+  this.tails[1].anchorBot.point = this.path.segments[15].point;
+  this.tails[0].update(sinVal);
+  this.tails[1].update(sinVal);
   // for(var i = 0; i < this.fins[0].path.segments.length; i++){
   //   this.fins[0].path.segments[i].point.y += Math.sin(sineSeed) * 4;
   //   this.fins[1].path.segments[i].point.y += Math.sin(sineSeed) * 4;
   // }
 
-  this.tails[0].anchor.point = this.path.segments[14].point;
-  this.tails[1].anchor.point = this.path.segments[16].point;
 
-  this.tails[0].anchorBot.point = this.path.segments[15].point;
-  this.tails[1].anchorBot.point = this.path.segments[15].point;
+
 
 
 
@@ -319,7 +309,7 @@ KHOI.Fish.prototype.wander = function() {
 	var wanderD	= 100;
 	var change = 0.05;
 
-	this.wanderTheta +=  Math.random() * (change * 2) - change;
+	//this.wanderTheta +=  Math.random() * (change * 2) - change;
 
 	var circleLocation = this.velocity.clone();
 	circleLocation = circleLocation.normalize();

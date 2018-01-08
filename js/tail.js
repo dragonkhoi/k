@@ -36,7 +36,7 @@ KHOI.Tail.prototype.init = function() {
 
 KHOI.Tail.prototype.midway = function(point1, point2, offset, right) {
   var midpoint = new Point( (point1.x + point2.x) / 2, (point1.y + point2.y) / 2 );
-  midpoint.x += offset * 1.3;
+  midpoint.x -= offset * 1.3;
   if(right){
     midpoint.y -= offset / 2;
   }
@@ -46,6 +46,23 @@ KHOI.Tail.prototype.midway = function(point1, point2, offset, right) {
   return midpoint;
 }
 
-KHOI.Tail.prototype.update = function(orientation){
+KHOI.Tail.prototype.update = function(sinVal){
+  this.path.segments[1].point = this.midway(this.anchorBot.point, this.anchor.point,  this.finSize, this.right);
+  this.path.segments[2].point = this.midway(this.anchorBot.point, this.path.segments[1].point, this.finSize / 4, this.right);
+  this.path.segments[3].point = this.midway(this.anchorBot.point, this.path.segments[2].point, this.finSize / 8, this.right);
 
+  var tailsegs = this.path.segments.length;
+  for(var i = 1; i < 4; i++){
+    //if(i > 0 && i < tailsegs - 1){
+      //this.tails[0].path.segments[i].point.y += Math.sin(sineSeed) * 0.5;
+      //this.tails[1].path.segments[i].point.y += Math.sin(sineSeed) * 0.5;
+      //this.path.segments[i].point.x += sinVal * (i) / 5; /// 25;
+      if(i != 1){
+        //this.path.segments[i].point.y += sinVal * 2;
+      }
+      else {
+        //this.path.segments[i].point.y += sinVal * 2;
+      }
+    }
+  //}
 }
