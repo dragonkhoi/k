@@ -210,31 +210,45 @@ KHOI.Fish.prototype.update = function(event){
 
   var sineSeed = (event.count * 0.2);
   var sinVal = Math.sin(sineSeed);
+  var sinDir = Math.sin(toRad(this.orientation));
+  console.log(sinDir);
+  var cosDir = Math.cos(toRad(this.orientation));
+  console.log(cosDir);
+
   if(sineSeed > Math.PI){
     sinVal *= 2; //Math.random() + 1;
   }
 
-  this.midTailGroup[0].y += sinVal * 0.1;
-  this.midTailGroup[1].y += sinVal * 0.1;
+  this.midTailGroup[0].y -= sinVal * 0.1 * cosDir;
+  this.midTailGroup[1].y -= sinVal * 0.1 * cosDir;
+  this.midTailGroup[0].x -= sinVal * 0.1 * sinDir;
+  this.midTailGroup[1].x -= sinVal * 0.1 * sinDir;
   // this.midTailGroup[0].x -= Math.sin(sineSeed) * 0.5;
   // this.midTailGroup[1].x += Math.sin(sineSeed) * 0.5;
 
-  this.midTail2Group[0].y += sinVal * 0.4;
-  this.midTail2Group[1].y += sinVal * 0.4;
+  this.midTail2Group[0].y -= sinVal * 0.4 * cosDir;
+  this.midTail2Group[1].y -= sinVal * 0.4 * cosDir;
+  this.midTail2Group[0].x -= sinVal * 0.4 * sinDir;
+  this.midTail2Group[1].x -= sinVal * 0.4 * sinDir;
   // this.midTail2Group[0].x -= Math.sin(sineSeed) * 1;
   // this.midTail2Group[1].x += Math.sin(sineSeed) * 1;
 
-  this.midTail3Group[0].y += sinVal * 0.8;
-  this.midTail3Group[1].y += sinVal * 0.8;
+  this.midTail3Group[0].y -= sinVal * 0.8 * cosDir;
+  this.midTail3Group[1].y -= sinVal * 0.8 * cosDir;
+  this.midTail3Group[0].x -= sinVal * 0.8 * sinDir;
+  this.midTail3Group[1].x -= sinVal * 0.8 * sinDir;
   // this.midTail3Group[0].x -= Math.sin(sineSeed) * 1.5;
   // this.midTail3Group[1].x += Math.sin(sineSeed) * 1.5;
 
   for(var i = 0; i < this.bottomTailGroup.length; i++){
     if(i != 1){
-      this.bottomTailGroup[i].y += sinVal * 1.2;
+      this.bottomTailGroup[i].y -= sinVal * 1.2 * cosDir;
+      this.bottomTailGroup[i].x -= sinVal * 1.2 * sinDir;
+
     }
     else {
-      this.bottomTailGroup[i].y += sinVal * 2;
+      this.bottomTailGroup[i].y -= sinVal * 2 * cosDir;
+      this.bottomTailGroup[i].x -= sinVal * 2 * sinDir;
     }
 
   }
@@ -249,12 +263,6 @@ KHOI.Fish.prototype.update = function(event){
   //   this.fins[0].path.segments[i].point.y += Math.sin(sineSeed) * 4;
   //   this.fins[1].path.segments[i].point.y += Math.sin(sineSeed) * 4;
   // }
-
-
-
-
-
-
   // expand contract
   // for(var i = 0; i < this.pathSides; i++){
   //   var segmentPoint = this.path.segments[i].point;
@@ -309,7 +317,7 @@ KHOI.Fish.prototype.wander = function() {
 	var wanderD	= 100;
 	var change = 0.05;
 
-	//this.wanderTheta +=  Math.random() * (change * 2) - change;
+	this.wanderTheta +=  Math.random() * (change * 2) - change;
 
 	var circleLocation = this.velocity.clone();
 	circleLocation = circleLocation.normalize();

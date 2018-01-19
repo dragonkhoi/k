@@ -35,7 +35,7 @@ KHOI.Tail.prototype.init = function() {
 }
 
 KHOI.Tail.prototype.midway = function(point1, point2, offset, right) {
-  var midpoint = new Point( (point1.x + point2.x) / 2, (point1.y + point2.y) / 2 );
+  var midpoint = new Point( (point1.x + point2.x) / 2, (point1.y + point2.y) / 2 ); //(point1.y + point2.y) / 2
   midpoint.x -= offset * 1.3;
   if(right){
     midpoint.y -= offset / 2;
@@ -46,8 +46,31 @@ KHOI.Tail.prototype.midway = function(point1, point2, offset, right) {
   return midpoint;
 }
 
+KHOI.Tail.prototype.endpoint = function(point, offset, right) {
+  // take vector from anchor to anchorBot and take the angle
+  // rotate upwards based on angle
+  // assume a 0 angle is flat
+  var delta = new Point( this.anchor.point.x - this.anchorBot.point.x , this.anchor.point.y - this.anchorBot.point.y );
+  var angle = Math.atan2(delta.y, delta.x);
+  point.x = this.anchorBot.point.x
+  point.y = this.anchorBot.point.y;
+
+  if(right){
+    point.x -= offset / 2; //magic number for approximation
+    point.x += offset * Math.sin(angle + 0.3);
+    point.x -= offset / 1.5; //magic number for shaping
+    point.y -= Math.cos(angle + 0.3) * offset;
+  }
+  else {
+    point.x -= offset * Math.sin(angle + 0.3);
+    point.x -= offset / 1.5; //magic number  for shaping
+    point.y += Math.cos(angle + 0.3) * offset;
+  }
+  // console.log(angle);
+}
+
 KHOI.Tail.prototype.update = function(sinVal){
-  this.path.segments[1].point = this.midway(this.anchorBot.point, this.anchor.point,  this.finSize, this.right);
+  this.endpoint(this.path.segments[1].point, 18, this.right); //this.midway(this.anchorBot.point, this.anchor.point,  this.finSize, this.right);
   this.path.segments[2].point = this.midway(this.anchorBot.point, this.path.segments[1].point, this.finSize / 4, this.right);
   this.path.segments[3].point = this.midway(this.anchorBot.point, this.path.segments[2].point, this.finSize / 8, this.right);
 
