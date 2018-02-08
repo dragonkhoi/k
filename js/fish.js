@@ -196,8 +196,11 @@ KHOI.Fish.prototype.update = function(event){
   this.velocity.y += this.acceleration.y;
   this.velocity.length = Math.min(this.maxTravelSpeed, this.velocity.length);
 
-  this.location.x += this.velocity.x;
-  this.location.y += this.velocity.y;
+  var sineSeed = (event.count * 0.2) + 100;
+  this.location.x = sineSeed * 10;
+  this.location.y = Math.sin(sineSeed / 10) / 2 + 200;
+  //this.location.x += this.velocity.x;
+  //this.location.y += this.velocity.y;
 
   this.acceleration.length = 0;
 
