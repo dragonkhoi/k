@@ -5,36 +5,26 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Bare - Start Bootstrap Template</title>
+    <meta name="description" content="Personal website of Khoi Le.">
+    <meta name="author" content="Khoi Le">
+    <link href="img/favicon.ico" rel="favicon">
+    <title>khoi's pond</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/khoi.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <style>
-      body {
-        padding-top: 54px;
-      }
-      @media (min-width: 992px) {
-        body {
-          padding-top: 56px;
-        }
-      }
 
-    </style>
-
+    <!-- Fonts from Google -->
+    <link href="https://fonts.googleapis.com/css?family=Reenie+Beanie" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
   </head>
-
   <body>
 
     <!-- Navigation -->
-    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top customNavBar" id="customNav">
       <div class="container">
         <a class="navbar-brand" href="#">Start Bootstrap</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="true" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -58,31 +48,314 @@
       </div>
     </nav> -->
 
+    <div id="videoContainer">
+      <video autoplay muted loop id="moon-koi">
+        <source src="vid/moon-koi.mp4" type="video/mp4">
+      </video>
+      <img src="img/khoi_script.png" onclick="scrollToKhoi()" id="centerImage"></img>
+    </div>
+    <div id="khoiNavBar">
+      <div class="navBarButton">
+        <a href="#wip" class="largeTextButton"> -doing- </a>
+      </div>
+      <div class="navBarButton">
+        <a href="#projects" class="largeTextButton"> -done- </a>
+      </div>
+      <div class="navBarButton">
+        <a href="#future" class="largeTextButton"> -dreams- </a>
+      </div>
+    </div>
     <!-- Page Content -->
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h1 class="mt-5">khoi le</h1>
-          <p class="lead">software engineer - vr dev</p>
+    <div class="newSection white-bg">
+      <div class="container" id="khoi">
+        <div class="row">
+          <div class="col-lg-12 text-left">
+            <h1 class="khoiHeader blackText">khoi le</h1>
+            <h2 class="khoiSubhead blackText">software engineer - xr technical product</h2>
+            <p class="khoiText blackText">
+              I'm currently an undergraduate student
+            at Stanford University, majoring in IDEAs (Immersive Design and Engineering Applications).
+              I've worked in VR/AR for two years now building research experiences
+              at <a class="khoiLink" href="https://vhil.stanford.edu">
+                 Stanford VHIL</a>, games at <a class="khoiLink" href="https://subdreamstudios.com"> Subdream Studios</a>,
+             and VR training experiences at <a class="khoiLink" href="https://strivr.com"> STRIVR</a>. I'm excited about
+             games, art, storytelling, and education in VR/AR. </p>
+             <p class="khoiText"> <a href="pdf/KhoiLe_Resume.pdf"> resume </a> </p>
+
+             <div class="photoRow">
+               <img src="img/khoi_london_mailbox_bw.png"></img>
+               <img src="img/khoi_headshot_square.jpg"></img>
+               <img src="img/khoi_headshot_circle.png"></img>
+             </div>
+          </div>
         </div>
       </div>
-      <canvas id="myCanvas" resize></canvas>
+    </div>
+    <div class="newSection">
+      <div class="container" id="wip">
+        <div class="row">
+          <div class="col-lg-12 text-left">
+            <h1 class="khoiHeader">doing</h1>
+            <p class="khoiSubhead"> what am i up to? </p>
+            <p class="khoiText"> developing a platform for story creators to easily share augmented reality animated short films </p>
+            <p class="khoiText"> watching 'westworld' and 'nirvana in fire' </p>
+            <p class="khoiText"> creating a set of mini-games for ARKit/ARCore called ARcade </p>
+            <p class="khoiText"> reading 'neuromancer' </p>
+            <p class="khoiText"> writing the VR/AR chapter of 'How to Speak Tech 2.0' </p>
+            <p class="khoiText"> trying to get to gold in overwatch </p>
+            <p class="khoiText"> arranging songs for <a href="stanfordmendicants.com"> the stanford mendicants </a> </p>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="newSection white-bg">
+        <div class="container" id="projects">
+          <div class="row">
+            <div class="col-lg-12 text-left">
+              <h1 class="khoiHeader">done</h1>
+              <h2 class="khoiSubhead blackText"> projects i've worked on </h2>
+              <div id="projectList">
+              <div class="projectBox">
+                <div class="descriptionBox">
+                  <h3> Kingdom Watcher </h3>
+                  <div class="video-container">
+                    <iframe width="854" height="480" src="https://www.youtube.com/embed/D79JeYkwTLk" frameborder="0" allowfullscreen></iframe>
+                  </div>
+                  <h4>
+                    Kingdom Watcher is the ultimate blend of tower defense and
+                    bow and arrow shooter. Inspired by Valve's <i>The Lab - Longbow</i>,
+                    players must defend their castle from the onslaught of the Troll King's army.
+                    Players can build and upgrade towers like a traditional TD game, but are also
+                    equipped with their own bow and arrow to take out enemies. I designed and built Kingdom
+                    Watcher from the ground up with minimal engineering support from Subdream
+                    Studios. All the art assets were done by Kanji Fukuta of Subdream Studios.
+                    Built with Unity - C#. Kingdom Watcher is available on GearVR and has been played over 9000 times.
+                  </h4>
+                  <h4> More on Kingdom Watcher here: <a class="khoiLink" href="https://www.subdreamstudios.com/kingdom-watcher"> Kingdom Watcher Page </a> </h4>
+
+                </div>
+              </div>
+              <hr>
+              <div class="projectBox">
+                <div class="descriptionBox">
+                  <h3> Journeys </h3>
+                  <div class="img-container">
+                    <img src="img/journeys.jpg"></img>
+                  </div>
+                  <h4>
+                    We want people to share and experience real world journeys. Humans are spatial creatures, yet more
+                    and more of our lives are lived out from our seats and over the internet. It's time to bring people
+                    back to exploring and experiencing reality. But that doesn't mean we have to move away from the
+                    digital world. We believe we can achieve this by combining digital and physical stories for an augmented
+                    life experience. Journeys is a mobile AR app that guides users through other users' journeys by showing
+                    them AR directions to real-world waypoints. Once there, users can experience the waypoint and see photos, text,
+                    and audio. Won Intel Vaunt's choice award at Creating Reality Hackathon.
+                    <a  class="khoiLink" href="https://youtu.be/KGGxEy7ZVFI"> Demo video </a>
+                  </h4>
+                  <h4> More on Journeys here: <a  class="khoiLink" href="https://devpost.com/software/journeys"> Journeys Devpost </a> </p>
+
+                </div>
+              </div>
+              <hr>
+              <div class="projectBox">
+                <div class="descriptionBox">
+                  <h3> Snowbird </h3>
+                  <div class="video-container">
+                    <iframe width="854" height="480" src="https://www.youtube.com/embed/b76CoJi9Iz0" frameborder="0" allowfullscreen></iframe>
+                  </div>
+                  <h4>
+                    Snowbird is the first immersive film for ARKit enabled devices.
+                    The viewer places a snowglobe in their world and watches an animated
+                    short in augmented reality, exploring different angles and getting up
+                    close and personal with the characters. Built with Unity - C#. Available now.
+                  </h4>
+                  <h4> More by <a  class="khoiLink" href="https://dandelionimmersive.com"> Dandelion Studios </a>.
+                    <h4> Download Snowbird here: <a  class="khoiLink" href="https://itunes.apple.com/us/app/snowbird-an-immersive-film/id1318139177?mt=8"> Snowbird App Store </a></p>
+                </div>
+              </div>
+              <hr>
+
+              <div class="projectBox">
+                <div class="descriptionBox">
+                  <h3> Charleston Reconstructed </h3>
+                  <div class="img-container">
+                    <img src="img/charleston-reconstructed.PNG"></img>
+                  </div>
+                  <h4>
+                    Recently awarded the
+                    <i> Magic Grant </i> from the <a  class="khoiLink" href="https://brown.columbia.edu/"> Brown Institute for Media Innovation</a>
+                    to build: <i> Charleston Reconstructed </i>. We are using AR to
+                    reimagine how public spaces would look in a more inclusive time period.
+                    Focused on Charleston, South Carolina, our project will provide diverse, provocative
+                    perspectives on Charleston's public spaces containing Confederate-era monuments.
+                    Development begins in September 2018.
+                  </h4>
+                </div>
+              </div>
+              <hr>
+              <div class="projectBox">
+                <div class="descriptionBox">
+                  <h3> Luminosity </h3>
+                  <div class="video-container">
+                    <iframe width="854" height="480" src="https://www.youtube.com/embed/JcocZMU1zQc" frameborder="0" allowfullscreen></iframe>
+                  </div>
+                  <h4>
+                    Luminosity is a reverse-stealth and puzzle
+                    game built for Stanford's Intro to Game Design
+                    class. I made the light spirit character, designed
+                    levels, and designed and developed the camera code.
+                    Built in 5 weeks with Unity - C#. Won
+                    <i> Student's Choice Award </i> from Stanford Video Game Association.
+                  </h4>
+                </div>
+              </div>
+              <hr>
+              <div class="projectBox">
+                <div class="descriptionBox">
+                  <h3> SocialQ </h3>
+                  <div class="video-container">
+                    <iframe width="854" height="480" src="https://www.youtube.com/embed/JAYqeIv5vWg" frameborder="0" allowfullscreen></iframe>
+                  </div>
+                  <h4>
+                    SocialQ is an assistive technology that
+                    helps children affected by ASD (Autism-Spectrum Disorder)
+                    to better recognize facial expressions and social cues.
+                    SocialQ utilizes Microsoft's Augmented Reality Headset <i>HoloLens</i>
+                    to provide real-time and real-world assistance and training. There
+                    are two interfaces: a learning interface, where the user can ask the
+                    app what certain expressions look like, and an assistance interface, where the
+                    user can figure out what the other person's expressions reveal about their emotions.
+                    Built using Microsoft Emotion API, Windows Speech Recognition, and Unity SDK for HoloLens.
+                    Won <i> Best Use of Microsoft Technology </i> at UC Berkeley's Hackathon: CalHacks 3.0.
+                    Also a <i>U.S Microsoft Imagine Cup National Finalist</i>.
+                    All demo footage is shot live through the HoloLens.
+                  </h4>
+                </div>
+              </div>
+              <hr>
+              <div class="projectBox">
+                <div class="descriptionBox">
+                  <h3> The XR Files </h3>
+                  <div class="img-container">
+                    <img src="img/vrfiles.JPG"></img>
+                  </div>
+                  <h4>
+                    The XR Files is a platform I created to make information
+                    about virtual, augmented, and mixed reality more accessible. Focused on
+                    industry applications of XR, The XR Files sources
+                    and curates research papers that validate use-cases
+                    of virtual, augmented, and mixed reality.
+                  </h4>
+                  <h4> The XR Files is live here: <a  class="khoiLink" href="https://dragonkhoi.github.io/the-xr-files/"> The XR Files </a> </p>
+
+                </div>
+              </div>
+              <hr>
+
+              <div class="projectBox">
+                <div class="descriptionBox">
+                  <h3> Co-founder and CEO of Lunasphere </h3>
+                  <h4>
+                    Lunasphere is a platform for the next generation
+                    of informational content about real world objects.
+                    Currently, the Triton Museum of Art in Santa Clara uses Lunasphere to
+                    publish multimedia content, which its patrons can
+                    access through QR Code or through an exhibit look up.
+                    I built Lunasphere from the ground up using Angular and
+                    JQuery for the front-end, and AngularFire, Firebase, and Javascript
+                    for the backend.
+                  </h4>
+                  <h4> Lunasphere is live on mobile devices here: <a class="khoiLink"  href="https://lunaspheretriton.firebaseapp.com"> Triton Museum </a> </p>
+
+                </div>
+                <div class="webEmbed">
+                  <iframe width="854" height="480" src="https://lunaspheretriton.firebaseapp.com" frameborder="0" allowfullscreen></iframe>
+                </div>
+              </div>
+              <hr>
+              <div class="projectBox">
+                <div class="descriptionBox">
+                  <h3> half step website </h3>
+                  <div class="img-container">
+                    <img src="img/halfstep.PNG"></img>
+                  </div>
+                  <h4>
+                    half step is an HCI project for Stanford's Intro to HCI class.
+                    I designed the website, focusing on playfulness and delight. Built using paper.js library.
+                    Since half step is a music learning journey, the website is a piano that plays notes as you navigate.
+                  </h4>
+                  <h4> More on half step here: <a  class="khoiLink" href="http://web.stanford.edu/class/cs147/projects/education/halfstep/"> half step page </a></p>
+
+                </div>
+                <!-- <div class="webEmbed">
+                  <iframe width="854" height="480" src="http://web.stanford.edu/class/cs147/projects/education/halfstep/" frameborder="0" allowfullscreen></iframe>
+                </div> -->
+              </div>
+              <hr>
+              <div class="projectBox">
+                <div class="descriptionBox">
+                  <h3> memVRy </h3>
+                  <h4>
+                    memVRy is a way to visualize memory palaces in
+                    Virtual Reality, which can aid in remembering
+                    new ideas. In this demo, memVRy is used to teach
+                    Spanish vocabulary words. I lead my team in building
+                    this product in Unity for Google
+                    Cardboard at a hackathon.
+                  </h4>
+                </div>
+                <div class="video-container">
+                  <iframe width="854" height="480" src="https://www.youtube.com/embed/S03Pkc5nlFg" frameborder="0" allowfullscreen></iframe>
+                </div>
+              </div>
+              <hr>
+
+              <div class="projectBox">
+                <div class="descriptionBox">
+                  <h3> OrganizEZ </h3>
+                  <h4>
+                    OrganizEZ: Never worry about your downloads again!
+                    OrganizEZ is an app that runs on your desktop and watches
+                    your downloads folder. Any new files downloaded are analyzed
+                    using IBM Watson's image recognition, natural language, and document conversion
+                    APIs. Your download is then sorted into the correct directory based on its contents.
+                    Built at a hackathon using NodeJS and Electron.
+                  </h4>
+                </div>
+                <div class="video-container">
+                  <iframe width="854" height="480" src="https://www.youtube.com/embed/hdYeuQ6YWqE" frameborder="0" allowfullscreen></iframe>
+                </div>
+              </div>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="newSection">
+      <div class="container" id="future">
+        <div class="row">
+          <div class="col-lg-12 text-left">
+            <h1 class="khoiHeader">dreams</h1>
+            <p class="khoiSubhead"> i want to build the media of a creative future </p>
+            <p class="khoiText"> i want to be a creative engineer at cirque du soleil </p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
     <!-- JS Begins -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <!-- <script src="bootstrap-3.1.1-dist/js/bootstrap.min.js"></script> -->
-    <script src="node_modules/paper/dist/paper-full.js"></script>
-    <script src="js/util.js"></script>
 
-    <script src="js/fish.js"></script>
-    <script src="js/fin.js"></script>
-    <script src="js/tail.js"></script>
+    <script src="js/index.js"></script>
 
-    <script src="js/khoi.js"></script>
+    <!-- <script src="js/threekoi.js"></script> -->
     <!-- JS Ends -->
 
   </body>
