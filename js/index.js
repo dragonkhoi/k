@@ -31,15 +31,11 @@ function scrollToKhoi(){
 
 $(document).ready(function(){
   var topNavBar = $("#khoiNavBar").offset().top - 50;
-  console.log("top of navbar: " + topNavBar);
   window.onscroll = function(){
-    console.log(window.pageYOffset, topNavBar);
     if(window.pageYOffset > topNavBar){
-      console.log("more");
       navBarSnapTop("top");
     }
     else if(window.pageYOffset <= topNavBar){
-      console.log("less");
       navBarSnapTop("bot");
     }
   }
