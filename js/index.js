@@ -16,7 +16,15 @@ function navBarSnapTop(place){
 
   }
 }
-
+function toggleEmail(){
+  $('#khoisEmail').toggle('slow');
+}
+function showEmail() {
+  $('#khoisEmail').show();
+}
+function hideEmail(){
+  $('#khoisEmail').hide();
+}
 function hideNavBar(){
   navBar.style.opacity = 0;
 }

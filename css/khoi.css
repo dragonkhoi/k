@@ -143,6 +143,13 @@ p.blackText {
 	color: #222222;
 
 }
+.fauxLink {
+	color: #4444BB;
+}
+#khoisEmail {
+	display: none;
+	transition: display 0.3s;
+}
 #moon-koi {
 	position: absolute;
 	max-height: 50%;
