@@ -66,14 +66,35 @@
       <img src="img/khoi_script.png" onclick="scrollToKhoi()" id="centerImage"></img>
     </div>
     <div id="khoiNavBar">
-      <div class="navBarButton">
-        <a href="#wip" class="largeTextButton"> -doing- </a>
+      <div class="navBarButton dropdown">
+        <a href="#" class="largeTextButton dropButton"> -experience designer- </a>
+        <div class="dropdown-content">
+          <a href="#kingdomWatcher" class="dropdown-link">Kingdom Watcher</a>
+          <a href="#halfstep" class="dropdown-link">half step</a>
+          <a href="#strivr" class="dropdown-link">STRIVR</a>
+          <a href="#socialq" class="dropdown-link">SocialQ</a>
+        </div>
       </div>
-      <div class="navBarButton">
-        <a href="#projects" class="largeTextButton">  -done-  </a>
+      <div class="navBarButton dropdown">
+        <a href="#" class="largeTextButton dropButton">  -interactive engineer-  </a>
+        <div class="dropdown-content">
+          <a href="#kingdomWatcher" class="dropdown-link">Kingdom Watcher</a>
+          <a href="#strivr" class="dropdown-link">STRIVR</a>
+          <a href="#snowbird" class="dropdown-link">Snowbird</a>
+          <a href="#socialq" class="dropdown-link">SocialQ</a>
+          <a href="#charleston-reconstructed" class="dropdown-link">Charleston Reconstructed</a>
+          <a href="#luminosity" class="dropdown-link">Luminosity</a>
+
+        </div>
       </div>
-      <div class="navBarButton">
-        <a href="#future" class="largeTextButton"> -dreams-</a>
+      <div class="navBarButton dropdown">
+        <a href="#" class="largeTextButton dropButton"> -webdev hacker-</a>
+        <div class="dropdown-content">
+          <a href="#lunasphere" class="dropdown-link">Lunasphere</a>
+          <a href="#xrfiles" class="dropdown-link">The XR Files</a>
+          <a href="#halfstep" class="dropdown-link">half step</a>
+          <a href="#organizez" class="dropdown-link">OrganizEZ</a>
+        </div>
       </div>
     </div>
     <!-- Page Content -->
@@ -149,26 +170,6 @@
         </div>
       </div>
     </div>
-    <div class="newSection">
-      <div class="container" id="wip">
-        <div class="row">
-          <div class="col-lg-12 text-left">
-            <h1 class="khoiHeader">doing</h1>
-            <p class="khoiSubhead"> what am i up to? </p>
-            <p class="khoiText"> just finished a summer technical product management internship at STRIVR </a> </p>
-            <p class="khoiText"> developing a platform for story creators to easily share augmented reality animated short films: <a href="https://dandelionimmersive.com"> Dandelion </a> </p>
-            <p class="khoiText"> watching 'mad men' and 'peaky blinders' </p>
-            <p class="khoiText"> creating a set of mini-games for ARKit/ARCore called ARcade </p>
-            <p class="khoiText"> working on charleston reconstructed: using AR statues to unearth hidden histories and replace confederate narratives </p>
-            <p class="khoiText"> reading 'the obelisk gate' </p>
-            <p class="khoiText"> writing the VR/AR chapter of 'How to Speak Tech 2.0' </p>
-            <p class="khoiText"> trying to get to plat in overwatch and diamond in league of legends </p>
-            <p class="khoiText"> arranging songs for <a href="https://stanfordmendicants.com"> the stanford mendicants </a> </p>
-            <p class="khoiText"> teaching <a href="http://web.stanford.edu/class/cs11si/"><i>CS11: How to Make VR - Intro to Virtual Reality Design and Development</i></a> </p>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="newSection white-bg">
         <div class="container" id="projects">
           <div class="row">
@@ -176,11 +177,55 @@
               <h1 class="khoiHeader">done</h1>
               <h2 class="khoiSubhead blackText"> projects i've worked on </h2>
               <div id="projectList">
-              <div class="projectBox">
+                <div class="projectBox" id="strivr">
+                  <div class="descriptionBox">
+                    <h3> STRIVR </h3>
+                    <div class="img-container">
+                      <img src="img/whiteboard-early.jpg"></img>
+                    </div>
+                    <h4>
+                      This past summer, I designed and built
+                      a new product for STRIVR, delivering an MVP of a VR training content creation tool in six weeks. The tool is used
+                      internally, and a full-time PM was hired to continue its development after I left.
+                    </h4>
+                    <div class="photoRow">
+                      <div class="photoRowItem">
+                        <img width="580" class="photoRowPhoto" class="photoRowItem" src="img/strivr-eloquence-process.png"></img>
+                      </div>
+                      <div class="photoRowItem">
+                        <img width="280" class="photoRowPhoto" src="img/strivr-ui-sketch.jpg"></img>
+                      </div>
+                      <div class="photoRowItem">
+                        <img width="157" class="photoRowPhoto" class="photoRowItem" src="img/strivr-design-decisions.jpg"></img>
+                      </div>
+                    </div>
+                    <h4>
+                       I've worked at <a class="khoiLink" href="https://strivr.com">STRIVR </a> for two summers. Last summer, I was a technical product manager managing
+                       a new product for the STRIVR platform.
+                    </h4>
+
+                  </div>
+                </div>
+                <hr>
+              <div class="projectBox" id="kingdomWatcher">
                 <div class="descriptionBox">
                   <h3> Kingdom Watcher </h3>
                   <div class="video-container">
                     <iframe width="854" height="480" src="https://www.youtube.com/embed/D79JeYkwTLk" frameborder="0" allowfullscreen></iframe>
+                  </div>
+                  <h4>
+                    I designed and built Kingdom Watcher, a virtual reality tower defense game. Kingdom Watcher is available on HTC Vive and GearVR and has been played over 10,000 times.
+                  </h4>
+                  <div class="photoRow">
+                    <div class="photoRowItem">
+                      <img width="450" class="photoRowPhoto" src="img/kw_design_multi.png"></img>
+                    </div>
+                    <div class="photoRowItem">
+                      <img width="350" class="photoRowPhoto" class="photoRowItem" src="img/stage-three.jpg"></img>
+                    </div>
+                    <div class="photoRowItem">
+                      <img width="270" class="photoRowPhoto" class="photoRowItem" src="img/weapon-sketch.png"></img>
+                    </div>
                   </div>
                   <h4>
                     Kingdom Watcher is the ultimate blend of tower defense and
@@ -190,35 +235,15 @@
                     equipped with their own bow and arrow to take out enemies. I designed and built Kingdom
                     Watcher from the ground up with minimal engineering support from Subdream
                     Studios. All the art assets were done by Kanji Fukuta of Subdream Studios.
-                    Built with Unity - C#. Kingdom Watcher is available on HTC Vive and GearVR and has been played over 10,000 times.
+                    Built with Unity - C#.
                   </h4>
                   <h4> More on Kingdom Watcher here: <a class="khoiLink" href="https://www.subdreamstudios.com/kingdom-watcher"> Kingdom Watcher Page </a> </h4>
 
                 </div>
               </div>
               <hr>
-              <div class="projectBox">
-                <div class="descriptionBox">
-                  <h3> Journeys </h3>
-                  <div class="img-container">
-                    <img src="img/journeys.jpg"></img>
-                  </div>
-                  <h4>
-                    We want people to share and experience real world journeys. Humans are spatial creatures, yet more
-                    and more of our lives are lived out from our seats and over the internet. It's time to bring people
-                    back to exploring and experiencing reality. But that doesn't mean we have to move away from the
-                    digital world. We believe we can achieve this by combining digital and physical stories for an augmented
-                    life experience. Journeys is a mobile AR app that guides users through other users' journeys by showing
-                    them AR directions to real-world waypoints. Once there, users can experience the waypoint and see photos, text,
-                    and audio. Won Intel Vaunt's choice award at Creating Reality Hackathon.
-                    <a  class="khoiLink" href="https://youtu.be/KGGxEy7ZVFI"> Demo video </a>
-                  </h4>
-                  <h4> More on Journeys here: <a  class="khoiLink" href="https://devpost.com/software/journeys"> Journeys Devpost </a> </p>
 
-                </div>
-              </div>
-              <hr>
-              <div class="projectBox">
+              <div class="projectBox" id="snowbird">
                 <div class="descriptionBox">
                   <h3> Snowbird </h3>
                   <div class="video-container">
@@ -236,7 +261,7 @@
               </div>
               <hr>
 
-              <div class="projectBox">
+              <div class="projectBox" id="charleston-reconstructed">
                 <div class="descriptionBox">
                   <h3> Charleston Reconstructed </h3>
                   <div class="img-container">
@@ -256,7 +281,7 @@
                 </div>
               </div>
               <hr>
-              <div class="projectBox">
+              <div class="projectBox" id="luminosity">
                 <div class="descriptionBox">
                   <h3> Luminosity </h3>
                   <div class="video-container">
@@ -276,7 +301,7 @@
                 </div>
               </div>
               <hr>
-              <div class="projectBox">
+              <div class="projectBox" id="socialq">
                 <div class="descriptionBox">
                   <h3> SocialQ </h3>
                   <div class="video-container">
@@ -299,7 +324,7 @@
                 </div>
               </div>
               <hr>
-              <div class="projectBox">
+              <div class="projectBox" id="xrfiles">
                 <div class="descriptionBox">
                   <h3> The XR Files </h3>
                   <div class="img-container">
@@ -318,7 +343,7 @@
               </div>
               <hr>
 
-              <div class="projectBox">
+              <div class="projectBox" id="lunasphere">
                 <div class="descriptionBox">
                   <h3> Co-founder and CEO of Lunasphere </h3>
                   <h4>
@@ -339,11 +364,24 @@
                 </div>
               </div>
               <hr>
-              <div class="projectBox">
+              <div class="projectBox" id="halfstep">
                 <div class="descriptionBox">
-                  <h3> half step website </h3>
+                  <h3> half step </h3>
                   <div class="img-container">
                     <img src="img/halfstep.JPG"></img>
+                  </div>
+                  <h4> half step is an HCI project for Stanford's Intro to HCI class. We went through the entire design process including: needfinding (user research), prototyping, testing, reiterating.
+                  The website that I designed won 2nd best website in the class. </h4>
+                  <div class="photoRow">
+                    <div class="photoRowItem">
+                      <img class="photoRowPhoto" src="img/halfstep-postits.jpg"></img>
+                    </div>
+                    <div class="photoRowItem">
+                      <img class="photoRowPhoto" class="photoRowItem" src="img/halfstep-lofi-prototype.jpg"></img>
+                    </div>
+                    <div class="photoRowItem">
+                      <img class="photoRowPhoto" class="photoRowItem" src="img/halfstep-ar-sketch.jpg"></img>
+                    </div>
                   </div>
                   <h4>
                     half step is an HCI project for Stanford's Intro to HCI class.
@@ -358,7 +396,7 @@
                 </div> -->
               </div>
               <hr>
-              <div class="projectBox">
+              <div class="projectBox" id="memvry">
                 <div class="descriptionBox">
                   <h3> memVRy </h3>
                   <h4>
@@ -377,7 +415,7 @@
               </div>
               <hr>
 
-              <div class="projectBox">
+              <div class="projectBox" id="organizez">
                 <div class="descriptionBox">
                   <h3> OrganizEZ </h3>
                   <h4>
@@ -399,6 +437,28 @@
         </div>
       </div>
     </div>
+
+    <div class="newSection">
+      <div class="container" id="wip">
+        <div class="row">
+          <div class="col-lg-12 text-left">
+            <h1 class="khoiHeader">doing</h1>
+            <p class="khoiSubhead"> what am i up to now? </p>
+            <p class="khoiText"> just finished a summer technical product management internship at STRIVR </a> </p>
+            <p class="khoiText"> developing a platform for story creators to easily share augmented reality animated short films: <a href="https://dandelionimmersive.com"> Dandelion </a> </p>
+            <p class="khoiText"> watching 'mad men' and 'peaky blinders' </p>
+            <p class="khoiText"> creating a set of mini-games for ARKit/ARCore called ARcade </p>
+            <p class="khoiText"> working on charleston reconstructed: using AR statues to unearth hidden histories and replace confederate narratives </p>
+            <p class="khoiText"> reading 'the obelisk gate' </p>
+            <p class="khoiText"> writing the VR/AR chapter of 'How to Speak Tech 2.0' </p>
+            <p class="khoiText"> trying to get to plat in overwatch and diamond in league of legends </p>
+            <p class="khoiText"> arranging songs for <a href="https://stanfordmendicants.com"> the stanford mendicants </a> </p>
+            <p class="khoiText"> teaching <a href="http://web.stanford.edu/class/cs11si/"><i>CS11: How to Make VR - Intro to Virtual Reality Design and Development</i></a> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="newSection">
       <div class="container" id="future">
         <div class="row">
@@ -442,3 +502,26 @@
   </body>
 
 </html>
+
+<!-- ARCHIVED PROJECTS -->
+<!-- <div class="projectBox">
+  <div class="descriptionBox">
+    <h3> Journeys </h3>
+    <div class="img-container">
+      <img src="img/journeys.jpg"></img>
+    </div>
+    <h4>
+      We want people to share and experience real world journeys. Humans are spatial creatures, yet more
+      and more of our lives are lived out from our seats and over the internet. It's time to bring people
+      back to exploring and experiencing reality. But that doesn't mean we have to move away from the
+      digital world. We believe we can achieve this by combining digital and physical stories for an augmented
+      life experience. Journeys is a mobile AR app that guides users through other users' journeys by showing
+      them AR directions to real-world waypoints. Once there, users can experience the waypoint and see photos, text,
+      and audio. Won Intel Vaunt's choice award at Creating Reality Hackathon.
+      <a  class="khoiLink" href="https://youtu.be/KGGxEy7ZVFI"> Demo video </a>
+    </h4>
+    <h4> More on Journeys here: <a  class="khoiLink" href="https://devpost.com/software/journeys"> Journeys Devpost </a> </p>
+
+  </div>
+</div>
+<hr> -->

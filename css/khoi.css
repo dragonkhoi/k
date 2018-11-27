@@ -36,13 +36,59 @@ h4 {
 	text-decoration: none;
 	color: #CCCCCC;
 }
+.dropButton {
+
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0,0,0,0.8);
+		color: white;
+    width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+		opacity: 0;
+		transition: opacity 0.5s;
+		transition: display 0.5s;
+		transition: background-color 0.5s;
+
+		webkit-transition: opacity 0.5s;
+		webkit-transition: display 0.5s;
+		webkit-transition: background-color 0.5s;
+
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: white;
+		font-family: 'EB Garamond', serif;
+    padding: 12px 16px;
+		font-size: 1.7em;
+    text-decoration: none;
+    display: block;
+		transition: color 0.3s;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: rgba(15,15,15,0.8); color: rgba(230, 230, 255, 1);}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block; opacity: 1;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
 #khoiNavBar {
 	position: absolute;
 	z-index: 10;
 	display: flex;
-	top: 80%;
-	left: 37%;
-	width: 25%;
+	top: 10%;
+	left: 13%;
+	width: 70%;
 	webkit-transition: opacity 0.5s;
 	transition: opacity 0.5s;
 	opacity: 0;
@@ -116,6 +162,7 @@ h4 {
 	width: 100%;
 	overflow: hidden;
 	z-index: 1;
+	flex-direction: row;
 	/* z-index: -1;
 	border: 1px solid green; */
 }
@@ -123,18 +170,13 @@ h4 {
 	flex-grow: 1;
 	flex-shrink: 1;
 	flex-basis: 20%;
-	/* z-index: -1; */
-
-	/* min-width: 0;
-	min-height: 0; */
-	/* max-height: 30%;
-	max-width: 30%; */
-
-	/* padding: 20px 20px 20px 20px; */
 }
+
+
 .photoRowPhoto {
 	max-height: 400px;
 }
+
 .white-bg {
 	background-color: #F0F0F0;
 }
@@ -237,6 +279,10 @@ hr{
     width: 50%;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
+.hero {
+	width: 100%;
+	height: 20vh;
+}
 .projectBox{
   width: 100%;
   padding-top: 25px;
@@ -290,6 +336,7 @@ hr{
 	margin-bottom: 35px;
   height: 0;
   overflow: hidden;
+
 }
 .img-container img {
   width: 100%;
