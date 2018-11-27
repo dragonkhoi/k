@@ -5,13 +5,13 @@ var navBarTimer;
 function navBarSnapTop(place){
   if(place == "top"){
     navBar.style.position = 'fixed';
-    navBar.style.top = '50px';
+    navBar.style.top = '0px';
     navBar.style.backgroundColor = 'rgba(30, 30, 30, 0.5)';
   }
   else if(place == "bot"){
     console.log("botsnap");
     navBar.style.position = 'absolute';
-    navBar.style.top = '80%';
+    navBar.style.top = '10%';
     navBar.style.backgroundColor = 'rgba(50, 50, 50, 0.0)';
 
   }
@@ -38,7 +38,7 @@ function scrollToKhoi(){
 }
 
 $(document).ready(function(){
-  var topNavBar = $("#khoiNavBar").offset().top - 50;
+  var topNavBar = $("#khoiNavBar").offset().top;
   window.onscroll = function(){
     if(window.pageYOffset > topNavBar){
       navBarSnapTop("top");
@@ -57,6 +57,15 @@ $(document).ready(function(){
   }
 
   $(".largeTextButton").click(function() {
+    var target = this.hash, $target = $(target);
+    $('html, body').animate({
+      scrollTop: $target.offset().top
+    }, 1200, 'swing', function(){
+      window.location.hash = target;
+    });
+  });
+
+  $(".dropdown-link").click(function() {
     var target = this.hash, $target = $(target);
     $('html, body').animate({
       scrollTop: $target.offset().top
