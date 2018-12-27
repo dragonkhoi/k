@@ -164,6 +164,8 @@ h4 {
 	overflow: hidden;
 	z-index: 1;
 	flex-direction: row;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	/* z-index: -1;
 	border: 1px solid green; */
 }
