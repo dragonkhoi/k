@@ -16,7 +16,7 @@ html, body {
 }
 h3 {
 	color: #E6E6E6;
-	font-family: 'Reenie Beanie', serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 3em;
 }
 h4 {
@@ -28,8 +28,9 @@ h4 {
 		text-align: center;
 }
 .largeTextButton {
-	font-family: 'Reenie Beanie', cursive;
-	font-size: 2.7em;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 1.7em;
+	font-weight: bolder;
 	color: #EEEEEE;
 }
 .largeTextButton:hover {
@@ -118,7 +119,7 @@ h4 {
 	opacity: 1;
 }
 .khoiHeader {
-	font-family: 'Reenie Beanie', cursive;
+	font-family: 'Source Sans Pro', sans-serif;
 	color: #EAEAEA;
 	font-size: 7em;
 }
