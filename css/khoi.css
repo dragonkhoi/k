@@ -335,14 +335,19 @@ hr{
 .img-container {
   position: relative;
   padding-bottom: 56.25%;
-  padding-top: 35px;
-	margin-bottom: 35px;
+  padding-top: 15px;
+	margin-bottom: 15px;
   height: 0;
   overflow: hidden;
 
 }
 .img-container img {
   width: 100%;
+}
+.img-container video {
+  width: 100%;
+	min-height: 512px;
+	margin-bottom: 0;
 }
 /* a{
   color: rgb(0, 0, 100);
