@@ -17,7 +17,7 @@ html, body {
 h3 {
 	color: #E6E6E6;
 	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 3em;
+	font-size: 2.3em;
 }
 h4 {
 	color: #D6D6D6;
@@ -29,7 +29,7 @@ h4 {
 }
 .largeTextButton {
 	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 1.7em;
+	font-size: 1.5em;
 	font-weight: bolder;
 	color: #EEEEEE;
 }
@@ -68,7 +68,7 @@ h4 {
     color: white;
 		font-family: 'EB Garamond', serif;
     padding: 12px 16px;
-		font-size: 1.7em;
+		font-size: 1.5em;
     text-decoration: none;
     display: block;
 		transition: color 0.3s;
@@ -121,17 +121,17 @@ h4 {
 .khoiHeader {
 	font-family: 'Source Sans Pro', sans-serif;
 	color: #EAEAEA;
-	font-size: 7em;
+	font-size: 3em;
 }
 .khoiSubhead {
 	font-family: 'EB Garamond', serif;
 	color: #E8E8E8;
-	font-size: 3em;
+	font-size: 2em;
 }
 .khoiText {
 	font-family: 'EB Garamond', serif;
 	color: #D6D6D6;
-	font-size: 2em;
+	font-size: 1.4em;
 	z-index: 11;
 }
 .khoiText a {
