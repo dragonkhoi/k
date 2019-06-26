@@ -22,7 +22,20 @@ h3 {
 h4 {
 	color: #D6D6D6;
 	font-family: 'EB Garamond', serif;
+	font-size: 1.3em;
+
 }
+.leftBar {
+	width: 40%;
+	float: left;
+	padding-right: 20px;
+}
+.rightBar {
+	width: 60%;
+	float: right;
+	padding-left: 20px;
+}
+
 .navBarButton {
 		flex-grow: 1;
 		text-align: center;
@@ -152,7 +165,18 @@ h4 {
 .newSection {
 	width: 100%;
 	padding-top: 50px;
-	padding-bottom: 50px;
+}
+.leftBarIntro
+{
+	width: 70%;
+	float: left;
+	padding-right: 50px;
+}
+.rightBarIntro
+{
+	width: 30%;
+	float: right;
+	padding-left: 50px;
 }
 #khoi {
 	/* background-image: url('../img/khoi_london_mailbox_bw_fade.png');
@@ -173,6 +197,7 @@ h4 {
 	flex-grow: 1;
 	flex-shrink: 1;
 	flex-basis: 20%;
+	padding-right: 10px;
 }
 
 
@@ -319,7 +344,6 @@ hr{
 .video-container {
     position: relative;
     padding-bottom: 56.25%;
-    padding-top: 35px;
 		margin-bottom: 35px;
     height: 0;
     overflow: hidden;
@@ -335,7 +359,6 @@ hr{
 .img-container {
   position: relative;
   padding-bottom: 56.25%;
-  padding-top: 15px;
 	margin-bottom: 15px;
   height: 0;
   overflow: hidden;
