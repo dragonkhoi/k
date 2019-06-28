@@ -392,6 +392,24 @@ a:visited{
   hr{
     width: 80%;
   }
+	.leftBar {
+		width: 100%;
+	}
+	.rightBar {
+		width: 100%;
+	}
+	.photoRow {
+		display: block;
+		width: 10%;
+		overflow: auto;
+	}
+	.photoRowItem {
+		width: 30%;
+		float: left;
+	}
+	.photoRowPhoto {
+		max-height: 120px;
+	}
 	#khoi {
 		/* background-image: url('../img/khoi_london_mailbox_bw_fade.png');
 		background-size: cover;
